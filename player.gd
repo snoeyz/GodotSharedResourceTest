@@ -7,7 +7,7 @@ const JUMP_VELOCITY = -400.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 # Loading player_data.tres via the Inspector in the Godot editor
-@export var player_data: Resource
+@export var player_data: PlayerData
 
 func _physics_process(delta):
 	# Add the gravity.
