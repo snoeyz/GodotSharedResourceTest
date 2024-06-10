@@ -4,7 +4,9 @@ const CROC = preload("res://Croc.png")
 
 @onready var label = $HBoxContainer/Label
 
-var playerData := PlayerDataLoader.from_storage()
+# Alternative method to programatically load the resource
+const STORAGE_PATH := "res://player_data.tres"
+var playerData := ResourceLoader.load(STORAGE_PATH)
 
 func _ready() -> void:
 	_on_state_changed()

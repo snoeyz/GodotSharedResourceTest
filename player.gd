@@ -6,7 +6,8 @@ const JUMP_VELOCITY = -400.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-@onready var player_data := PlayerDataLoader.from_storage()
+# Loading player_data.tres via the Inspector in the Godot editor
+@export var player_data: Resource
 
 func _physics_process(delta):
 	# Add the gravity.
