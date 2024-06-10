@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgvmwq6h3s1va"]
+
+[ext_resource type="Script" path="res://gui.gd" id="1_qichr"]
+
+[node name="GUI" type="CanvasLayer"]
+script = ExtResource("1_qichr")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Crocs Collected: 0"

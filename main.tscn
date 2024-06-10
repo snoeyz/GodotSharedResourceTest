@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://d2vihf2ncxjnu"]
+
+[ext_resource type="PackedScene" uid="uid://c5whftwior03l" path="res://player.tscn" id="1_y53xg"]
+[ext_resource type="Texture2D" uid="uid://c222qpndp7wwa" path="res://IMG_0647.JPG" id="2_s8si1"]
+[ext_resource type="PackedScene" uid="uid://cgvmwq6h3s1va" path="res://gui.tscn" id="3_7x3bn"]
+[ext_resource type="PackedScene" uid="uid://5p5yd52dj151" path="res://croc_pickup.tscn" id="4_yok1m"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lo1fb"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 4898.0
+offset_bottom = 3265.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_s8si1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 816)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_lo1fb")
+
+[node name="GUI" parent="." instance=ExtResource("3_7x3bn")]
+
+[node name="Crocs" type="Node" parent="."]
+
+[node name="CrocPickup" parent="Crocs" instance=ExtResource("4_yok1m")]
+position = Vector2(506, 771)
+
+[node name="CrocPickup2" parent="Crocs" instance=ExtResource("4_yok1m")]
+position = Vector2(728, 767)
+
+[node name="Player" parent="." instance=ExtResource("1_y53xg")]
+position = Vector2(141, 559)
